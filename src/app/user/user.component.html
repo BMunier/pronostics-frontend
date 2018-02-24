@@ -1,3 +1,36 @@
-<p>
-  user works!
-</p>
+<div>
+  <mat-table #userTable [dataSource]=dataSource>
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.id}} </mat-cell>
+      </ng-container>
+  
+      <!-- Firstname Column -->
+      <ng-container matColumnDef="firstname">
+        <mat-header-cell *matHeaderCellDef> Firstname </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.firstname}} </mat-cell>
+      </ng-container>
+
+      <!-- Lastname Column -->
+      <ng-container matColumnDef="lastname">
+          <mat-header-cell *matHeaderCellDef> Lastname </mat-header-cell>
+          <mat-cell *matCellDef="let user"> {{user.lastname}} </mat-cell>
+        </ng-container>
+  
+      <!-- Username Column -->
+      <ng-container matColumnDef="username">
+        <mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.username}} </mat-cell>
+      </ng-container>
+  
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+        <mat-cell *matCellDef="let user"> {{user.email}} </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
